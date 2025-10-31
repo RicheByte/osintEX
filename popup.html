@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINTEX - OSINT Search Engines</title>
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        html, body {
+            width: 480px;
+            height: 600px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="icons/icon48.png" alt="OSINTEX" class="logo-img">
+                <h1>OSINTEX</h1>
+            </div>
+            <div class="stats">
+                <span id="totalCount">0</span> search engines
+            </div>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Search by name or description..."
+                autocomplete="off"
+            >
+            <button id="clearSearch" class="clear-btn" title="Clear search">×</button>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="all">
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                All
+            </button>
+            <button class="tab-btn" data-tab="favorites">
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                Favorites
+                <span id="favCount" class="fav-count">0</span>
+            </button>
+            <button class="tab-btn" data-tab="categories">
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Categories
+            </button>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <!-- All Engines Tab -->
+            <div id="allTab" class="tab-content active">
+                <div id="categoryList" class="category-list"></div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div id="favoritesTab" class="tab-content">
+                <div id="favoritesList" class="favorites-list">
+                    <div class="empty-state">
+                        <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <p>No favorites yet</p>
+                        <small>Click the star icon to add search engines to your favorites</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Tab -->
+            <div id="categoriesTab" class="tab-content">
+                <div id="categoriesGrid" class="categories-grid"></div>
+            </div>
+
+            <!-- Selected Category View -->
+            <div id="categoryView" class="tab-content category-view">
+                <button id="backToCategories" class="back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Categories
+                </button>
+                <h2 id="categoryTitle" class="category-title"></h2>
+                <p id="categoryDescription" class="category-description"></p>
+                <div id="categoryItems" class="items-list"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="https://github.com/edoardottt/awesome-hacker-search-engines" target="_blank" class="footer-link">
+                GitHub
+            </a>
+            <span class="footer-separator">•</span>
+            <span id="resultsCount" class="results-count">0 results</span>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
