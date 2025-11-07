@@ -14,6 +14,9 @@ A powerful browser extension providing quick access to 525+ OSINT and hacker sea
 - ⚡ **Fast & Lightweight** - Instant access from your browser toolbar
 - 🔄 **Cross-Browser** - Works on Chrome, Edge, Brave, and Firefox
 
+
+![Demo video](/assets/video.gif)
+
 ## Installation
 
 ### Chrome / Edge / Brave (Chromium-based browsers)
@@ -119,25 +122,6 @@ This extension is based on the [Awesome Hacker Search Engines](https://github.co
 
 ## Development
 
-### Project Structure
-
-```
-osintex/
-├── extension/
-│   ├── manifest.json      # Extension manifest
-│   ├── popup.html         # Extension popup UI
-│   ├── popup.css          # Styling
-│   ├── popup.js           # Main functionality
-│   ├── data.json          # Search engines data
-│   └── icons/             # Extension icons
-│       ├── icon16.png
-│       ├── icon32.png
-│       ├── icon48.png
-│       └── icon128.png
-├── parse_readme.py        # Script to parse README into JSON
-├── create_icons.py        # Script to generate icons
-└── README.md              # This file
-```
 
 ### Updating Data
 
